@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chhayya • Begin Reflection</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Your Conversations</h2>
+                <button class="btn btn-outline btn-small" id="newChatBtn">+ New</button>
+            </div>
+            <div class="chat-list" id="chatList"></div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <nav class="navbar">
+                <div class="logo">chhayya</div>
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="#">How it works</a>
+                    <a href="#">About</a>
+                </div>
+            </nav>
+
+            <!-- Upload Section -->
+            <section class="upload-card card" id="uploadSection">
+                <h2>Share their words</h2>
+                <p class="card-sub">Upload a WhatsApp chat export. The more messages, the richer the reflections.</p>
+                <div class="upload-area">
+                    <input type="file" id="chatFile" accept=".txt" hidden>
+                    <button class="btn btn-outline" id="uploadBtn">Choose file</button>
+                    <span class="file-name" id="fileName">No file chosen</span>
+                </div>
+                <div id="uploadStatus" class="status-message"></div>
+            </section>
+
+            <!-- Chat Section (hidden initially) -->
+            <section class="chat-card card" id="chatSection" style="display: none;">
+                <div class="chat-header">
+                    <label for="personSelect" class="person-label">Who would you like to hear from?</label>
+                    <select id="personSelect" class="person-select"></select>
+                </div>
+                <div class="chat-history" id="chatHistory"></div>
+                <div class="chat-input-area">
+                    <textarea id="question" rows="1" placeholder="Type your message..."></textarea>
+                    <div class="input-footer">
+                        <label class="checkbox">
+                            <input type="checkbox" id="useOpenAI" checked> 
+                            <span>Use AI generation</span>
+                        </label>
+                        <button class="btn btn-primary" id="askBtn">Send</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
