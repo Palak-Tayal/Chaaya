@@ -1,0 +1,5 @@
+flask
+nltk
+text2emotion
+numpy
+pandas
